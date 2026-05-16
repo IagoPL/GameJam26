@@ -1,19 +1,34 @@
 fileFormatVersion: 2
-guid: 83f7560ebdcf6fc4881f2131b4150c70
+guid: 2a64a33f0517c31408257cfdc5dc2c90
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5306706958472001560
-    second: Blue-Death_0
+      213: -1001676846079120941
+    second: Blue-Explosion_0
   - first:
-      213: 1625267032936086919
-    second: Blue-Death_1
+      213: 5227352454214668018
+    second: Blue-Explosion_1
   - first:
-      213: -715604471568141286
-    second: Blue-Death_2
+      213: -3483749745675279251
+    second: Blue-Explosion_2
   - first:
-      213: -7470777918270075274
-    second: Blue-Death_3
+      213: -6881717452064019617
+    second: Blue-Explosion_3
+  - first:
+      213: -1870407008945574793
+    second: Blue-Explosion_4
+  - first:
+      213: -2364956915943266521
+    second: Blue-Explosion_5
+  - first:
+      213: -2972960114921075047
+    second: Blue-Explosion_6
+  - first:
+      213: -4986504780206885284
+    second: Blue-Explosion_7
+  - first:
+      213: 8676134225496198907
+    second: Blue-Explosion_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,7 +137,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue-Death_0
+      name: Blue-Explosion_0
       rect:
         serializedVersion: 2
         x: 20
@@ -137,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e7ce2d232aca56b0800000000000000
-      internalID: -5306706958472001560
+      spriteID: 3d968b137345912f0800000000000000
+      internalID: -1001676846079120941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue-Death_1
+      name: Blue-Explosion_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 84
         y: 0
-        width: 37
-        height: 69
+        width: 35
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78dfe4361cb1e8610800000000000000
-      internalID: 1625267032936086919
+      spriteID: 2fe4b358c594b8840800000000000000
+      internalID: 5227352454214668018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue-Death_2
+      name: Blue-Explosion_2
       rect:
         serializedVersion: 2
-        x: 142
+        x: 148
         y: 0
-        width: 39
-        height: 69
+        width: 35
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +196,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a14ff784689a116f0800000000000000
-      internalID: -715604471568141286
+      spriteID: d64eaa2601c37afc0800000000000000
+      internalID: -3483749745675279251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue-Death_3
+      name: Blue-Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 38
+        width: 5
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b2e11307a3f70a0800000000000000
+      internalID: -6881717452064019617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue-Explosion_6
       rect:
         serializedVersion: 2
         x: 206
         y: 0
         width: 39
-        height: 69
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +240,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 67e0ea1b017725890800000000000000
-      internalID: -7470777918270075274
+      spriteID: 99e89b2e68cedb6d0800000000000000
+      internalID: -2972960114921075047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue-Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 63
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c563bf072506ccab0800000000000000
+      internalID: -4986504780206885284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue-Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 63
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe4f462c12d76870800000000000000
+      internalID: 8676134225496198907
       vertices: []
       indices: 
       edges: []
@@ -213,7 +294,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6cf0902eb395efa448603bba20f2681a
+    spriteID: 67e18e94c7832804c90a6314566b2b47
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +304,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Blue-Death_0: -5306706958472001560
-      Blue-Death_1: 1625267032936086919
-      Blue-Death_2: -715604471568141286
-      Blue-Death_3: -7470777918270075274
+      Blue-Explosion_0: -1001676846079120941
+      Blue-Explosion_1: 5227352454214668018
+      Blue-Explosion_2: -3483749745675279251
+      Blue-Explosion_3: -6881717452064019617
+      Blue-Explosion_4: -1870407008945574793
+      Blue-Explosion_5: -2364956915943266521
+      Blue-Explosion_6: -2972960114921075047
+      Blue-Explosion_7: -4986504780206885284
+      Blue-Explosion_8: 8676134225496198907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
