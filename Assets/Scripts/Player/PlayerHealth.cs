@@ -41,15 +41,23 @@ public void Kill()
 
     public void TakeDamage(int damage)
     {
-        Debug.Log($"{gameObject.name} recibe {damage} de daño");
+        Debug.Log($"{gameObject.name} recibe intento de dano: {damage}. Vidas antes: {currentLives}");
         if (hasDied)
+        {
+            Debug.Log($"{gameObject.name} ignora el dano porque ya esta muerto");
             return;
+        }
 
         if (damage <= 0)
+        {
+            Debug.Log($"{gameObject.name} ignora el dano porque el valor no es positivo: {damage}");
             return;
+        }
 
         currentLives -= damage;
         currentLives = Mathf.Clamp(currentLives, 0, maxLives);
+
+        Debug.Log($"{gameObject.name} vidas despues del dano: {currentLives}");
 
         NotifyLivesChanged();
 

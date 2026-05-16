@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class S_PlayerAttack : MonoBehaviour
 {
@@ -11,11 +12,20 @@ public class S_PlayerAttack : MonoBehaviour
 
     private bool isAttacking = false;
     private string playerTag;
+    private readonly HashSet<PlayerHealth> damagedTargets = new HashSet<PlayerHealth>();
 
     private void Awake()
     {
         playerTag = gameObject.tag;
-        attackBox.SetActive(false); 
+        if (attackBox != null)
+        {
+            Debug.Log($"{gameObject.name} ataque inicializado con attackBox: {attackBox.name}");
+            attackBox.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning($"{gameObject.name} no tiene attackBox asignado en S_PlayerAttack");
+        }
     }
 
     private void Update()
@@ -33,21 +43,63 @@ public class S_PlayerAttack : MonoBehaviour
 
     private IEnumerator PerformAttack()
     {
+        if (attackBox == null)
+        {
+            Debug.LogWarning($"{gameObject.name} intenta atacar, pero attackBox es null");
+            yield break;
+        }
+
         isAttacking = true;
+        damagedTargets.Clear();
+        Debug.Log($"{gameObject.name} empieza ataque. Activando collider: {attackBox.name}");
         attackBox.SetActive(true); 
         yield return new WaitForSeconds(attackDuration);
         attackBox.SetActive(false); 
         isAttacking = false;
+        damagedTargets.Clear();
+        Debug.Log($"{gameObject.name} termina ataque. Desactivando collider: {attackBox.name}");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isAttacking) return;
+        Debug.Log($"{gameObject.name} OnTriggerEnter2D con {collision.gameObject.name}. Atacando: {isAttacking}");
+        TryDamageTarget(collision);
+    }
 
-        PlayerHealth targetHealth = collision.GetComponent<PlayerHealth>();
-        if (targetHealth != null && collision.gameObject != gameObject)
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log($"{gameObject.name} OnTriggerStay2D con {collision.gameObject.name}. Atacando: {isAttacking}");
+        TryDamageTarget(collision);
+    }
+
+    private void TryDamageTarget(Collider2D collision)
+    {
+        if (!isAttacking)
         {
-            targetHealth.TakeDamage(1);
+            Debug.Log($"{gameObject.name} detecta {collision.gameObject.name}, pero no esta atacando");
+            return;
         }
+
+        PlayerHealth targetHealth = collision.GetComponentInParent<PlayerHealth>();
+        if (targetHealth == null)
+        {
+            Debug.Log($"{gameObject.name} detecta {collision.gameObject.name}, pero no encontro PlayerHealth en el objeto ni en sus padres");
+            return;
+        }
+
+        if (targetHealth.gameObject == gameObject)
+        {
+            Debug.Log($"{gameObject.name} ignora su propio collider: {collision.gameObject.name}");
+            return;
+        }
+
+        if (!damagedTargets.Add(targetHealth))
+        {
+            Debug.Log($"{gameObject.name} ya habia golpeado a {targetHealth.gameObject.name} en este ataque");
+            return;
+        }
+
+        Debug.Log($"{gameObject.name} aplica 1 de dano a {targetHealth.gameObject.name} por collider {collision.gameObject.name}");
+        targetHealth.TakeDamage(1);
     }
 }

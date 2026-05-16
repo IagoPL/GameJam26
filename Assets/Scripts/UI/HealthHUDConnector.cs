@@ -9,8 +9,18 @@ public class HealthHUDConnector : MonoBehaviour
     [Header("HUD")]
     [SerializeField] private LivesHUD livesHUD;
 
+    private void Awake()
+    {
+        ResolveReferences();
+    }
+
     private void OnEnable()
     {
+        ResolveReferences();
+
+        if (livesHUD == null)
+            return;
+
         if (player1Health != null)
         {
             player1Health.OnLivesChanged += livesHUD.UpdatePlayer1Lives;
@@ -24,6 +34,11 @@ public class HealthHUDConnector : MonoBehaviour
 
     private void Start()
     {
+        ResolveReferences();
+
+        if (livesHUD == null)
+            return;
+
         if (player1Health != null)
         {
             livesHUD.UpdatePlayer1Lives(player1Health.CurrentLives);
@@ -37,6 +52,9 @@ public class HealthHUDConnector : MonoBehaviour
 
     private void OnDisable()
     {
+        if (livesHUD == null)
+            return;
+
         if (player1Health != null)
         {
             player1Health.OnLivesChanged -= livesHUD.UpdatePlayer1Lives;
@@ -46,5 +64,23 @@ public class HealthHUDConnector : MonoBehaviour
         {
             player2Health.OnLivesChanged -= livesHUD.UpdatePlayer2Lives;
         }
+    }
+
+    private void ResolveReferences()
+    {
+        if (livesHUD == null)
+            livesHUD = GetComponent<LivesHUD>();
+
+        if (player1Health == null)
+            player1Health = FindPlayerHealthByTag("Player1");
+
+        if (player2Health == null)
+            player2Health = FindPlayerHealthByTag("Player2");
+    }
+
+    private PlayerHealth FindPlayerHealthByTag(string playerTag)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag(playerTag);
+        return player != null ? player.GetComponent<PlayerHealth>() : null;
     }
 }
