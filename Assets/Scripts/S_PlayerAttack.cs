@@ -1,17 +1,14 @@
 using UnityEngine;
+using System.Collections;
 
 public class S_PlayerAttack : MonoBehaviour
 {
-    
-    [Header("Attack Necessities")] 
+    [Header("Attack Necessities")]
     [SerializeField] private GameObject attackBox;
-    [SerializeField] public GameObject[] HitBoxPlayer1;
-    [SerializeField] public GameObject[] HitBoxPlayer2;
 
     [Header("Attack Settings")]
     [SerializeField] private float attackDuration = 0.5f;
 
-   
     private bool isAttacking = false;
     private string playerTag;
 
@@ -27,16 +24,17 @@ public class S_PlayerAttack : MonoBehaviour
         {
             StartCoroutine(PerformAttack());
         }
+
         if (playerTag == "Player2" && Input.GetKeyDown(KeyCode.RightShift) && !isAttacking)
         {
             StartCoroutine(PerformAttack());
         }
     }
 
-     private System.Collections.IEnumerator PerformAttack()
+    private IEnumerator PerformAttack()
     {
         isAttacking = true;
-        attackBox.SetActive(true);
+        attackBox.SetActive(true); 
         yield return new WaitForSeconds(attackDuration);
         attackBox.SetActive(false); 
         isAttacking = false;
@@ -44,17 +42,12 @@ public class S_PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isAttacking) return; 
+        if (!isAttacking) return;
 
-        if (playerTag == "Player1" && collision.CompareTag("HitBoxPlayer2"))
+        PlayerHealth targetHealth = collision.GetComponent<PlayerHealth>();
+        if (targetHealth != null && collision.gameObject != gameObject)
         {
-            Debug.Log("Player2 recibe daño!");
-        }
-
-        if (playerTag == "Player2" && collision.CompareTag("HitBoxPlayer1"))
-        {
-            Debug.Log("Player1 recibe daño!");
+            targetHealth.TakeDamage(1);
         }
     }
-    
 }
