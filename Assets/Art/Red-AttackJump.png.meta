@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: 0ff9045887cc57f48b10622c50ac4d74
+guid: 16d5ee58c45cfcd4298e7db3225de666
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -112644698153631443
-    second: Red-Walk_0
+      213: 4654384847452413791
+    second: Red-AttackJump_0
   - first:
-      213: 8220038271701020828
-    second: Red-Walk_1
-  - first:
-      213: -3716135187014397774
-    second: Red-Walk_2
-  - first:
-      213: -9218238620358074868
-    second: Red-Walk_3
-  - first:
-      213: -4258418083271788921
-    second: Red-Walk_4
+      213: -4298590834215030337
+    second: Red-AttackJump_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,115 +99,62 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red-Walk_0
+      name: Red-AttackJump_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 0
-        width: 35
+        x: 2
+        y: 11
+        width: 61
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d21c8bc6e3ecf6ef0800000000000000
-      internalID: -112644698153631443
+      spriteID: f5f9c58db52b79040800000000000000
+      internalID: 4654384847452413791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Walk_1
+      name: Red-AttackJump_1
       rect:
         serializedVersion: 2
-        x: 73
-        y: 0
-        width: 35
+        x: 65
+        y: 11
+        width: 59
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c90fad8a141731270800000000000000
-      internalID: 8220038271701020828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red-Walk_2
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 0
-        width: 35
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2b05da08cb2ad6cc0800000000000000
-      internalID: -3716135187014397774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red-Walk_3
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 0
-        width: 35
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c0e15caa0dc321080800000000000000
-      internalID: -9218238620358074868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red-Walk_4
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 0
-        width: 38
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7863c79b05f07e4c0800000000000000
-      internalID: -4258418083271788921
+      spriteID: fb1fcd349665854c0800000000000000
+      internalID: -4298590834215030337
       vertices: []
       indices: 
       edges: []
@@ -225,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e74ae571ccda7454a9e493d5a820d36b
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red-Walk_0: -112644698153631443
-      Red-Walk_1: 8220038271701020828
-      Red-Walk_2: -3716135187014397774
-      Red-Walk_3: -9218238620358074868
-      Red-Walk_4: -4258418083271788921
+      Red-AttackJump_0: 4654384847452413791
+      Red-AttackJump_1: -4298590834215030337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

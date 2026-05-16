@@ -1,16 +1,34 @@
 fileFormatVersion: 2
-guid: 78ec65b640de590438222b1caaf9f886
+guid: 8c4f0b1128334bf49ba98c0422231690
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6483892779588941914
-    second: Red-Attack_0
+      213: -1694190215790013441
+    second: Red-Explosion_0
   - first:
-      213: -8675169353378624035
-    second: Red-Attack_1
+      213: -4136331398703264800
+    second: Red-Explosion_1
   - first:
-      213: 1835352036069196361
-    second: Red-Attack_2
+      213: -5322855700904159962
+    second: Red-Explosion_2
+  - first:
+      213: 4753787691009050290
+    second: Red-Explosion_3
+  - first:
+      213: -1220716139341622250
+    second: Red-Explosion_4
+  - first:
+      213: -2488004896079737585
+    second: Red-Explosion_5
+  - first:
+      213: -5810340470112525928
+    second: Red-Explosion_6
+  - first:
+      213: 1897562132241677101
+    second: Red-Explosion_7
+  - first:
+      213: -7834358699170141242
+    second: Red-Explosion_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,71 +120,150 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red-Attack_0
+      name: Red-Explosion_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 10
         y: 0
         width: 35
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a587e11412a6bf950800000000000000
-      internalID: 6483892779588941914
+      spriteID: ff3d4e599f60d78e0800000000000000
+      internalID: -1694190215790013441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Attack_1
+      name: Red-Explosion_1
       rect:
         serializedVersion: 2
         x: 73
         y: 0
-        width: 37
-        height: 69
+        width: 35
+        height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddd0385af6b9b9780800000000000000
-      internalID: -8675169353378624035
+      spriteID: 0eb4ff2128cc896c0800000000000000
+      internalID: -4136331398703264800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Attack_2
+      name: Red-Explosion_5
       rect:
         serializedVersion: 2
-        x: 140
+        x: 131
         y: 0
-        width: 52
-        height: 69
+        width: 45
+        height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 942c1b3e3fa787910800000000000000
-      internalID: 1835352036069196361
+      spriteID: f0d0cb1aab4d87dd0800000000000000
+      internalID: -2488004896079737585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red-Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891edde70268d5fa0800000000000000
+      internalID: -5810340470112525928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red-Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 63
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b7f7f94be755a10800000000000000
+      internalID: 1897562132241677101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red-Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 0
+        width: 63
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cbe8f47544c64390800000000000000
+      internalID: -7834358699170141242
       vertices: []
       indices: 
       edges: []
@@ -175,7 +272,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d9656433f22bf80418f56015802fc401
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +282,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red-Attack_0: 6483892779588941914
-      Red-Attack_1: -8675169353378624035
-      Red-Attack_2: 1835352036069196361
+      Red-Explosion_0: -1694190215790013441
+      Red-Explosion_1: -4136331398703264800
+      Red-Explosion_2: -5322855700904159962
+      Red-Explosion_3: 4753787691009050290
+      Red-Explosion_4: -1220716139341622250
+      Red-Explosion_5: -2488004896079737585
+      Red-Explosion_6: -5810340470112525928
+      Red-Explosion_7: 1897562132241677101
+      Red-Explosion_8: -7834358699170141242
+      Red-Explosion_9: -1818411465
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

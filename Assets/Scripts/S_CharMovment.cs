@@ -9,16 +9,29 @@ public class S_CharMovment : MonoBehaviour
 
     private bool isGrounded = false;
     private bool isBended = false;
+    private bool facingRight = true; 
+    private float crouchColliderHeight; 
 
     [Header("Ground Check")]
     public Transform groundCheck;
     public float groundCheckRadius = 0.1f;
+
+    private BoxCollider2D boxCollider;
+    private float originalColliderHeight;
+    private Vector2 originalColliderOffset;
+    
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         anim = GetComponent<Animator>();
+
+        boxCollider = GetComponent<BoxCollider2D>();
+        originalColliderHeight = boxCollider.size.y;
+        originalColliderOffset = boxCollider.offset;
+
+        crouchColliderHeight = originalColliderHeight * 0.6f;
     }
 
     private void Update()
@@ -44,6 +57,11 @@ public class S_CharMovment : MonoBehaviour
                 isBended = true;
             }
             else {isBended = false;}
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                FlipSprite();
+            }
         }
         if (CompareTag("Player2")) //Arrows
         {
@@ -59,11 +77,16 @@ public class S_CharMovment : MonoBehaviour
                 isBended = true;
             }
             else {isBended = false;}
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+               FlipSprite();
+            }
             
         }
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
         UpdateAnimations(move);
+        HandleBending();
     }
 
     private void UpdateAnimations(float move)
@@ -96,5 +119,27 @@ public class S_CharMovment : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
             isGrounded = false;
+    }
+    private void FlipSprite()
+    {
+        facingRight = !facingRight; 
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+
+    private void HandleBending()
+    {
+       if (isBended)
+    {
+        float deltaHeight = originalColliderHeight - crouchColliderHeight;
+        boxCollider.size = new Vector2(boxCollider.size.x, crouchColliderHeight);
+        boxCollider.offset = new Vector2(originalColliderOffset.x, originalColliderOffset.y - deltaHeight / 2f);
+    }
+    else
+    {
+        boxCollider.size = new Vector2(boxCollider.size.x, originalColliderHeight);
+        boxCollider.offset = originalColliderOffset;
+    }
     }
 }
