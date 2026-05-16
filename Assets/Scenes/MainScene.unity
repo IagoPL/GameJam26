@@ -131,6 +131,8 @@ GameObject:
   - component: {fileID: 160702581}
   - component: {fileID: 160702580}
   - component: {fileID: 160702579}
+  - component: {fileID: 160702583}
+  - component: {fileID: 160702582}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -285,6 +287,42 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &160702582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160702577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412f0428df03c0850b49be1e58802080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  attackKey: 303
+  cooldownDuration: 0.4
+  attackRange: 1.5
+  attackPoint: {fileID: 0}
+  headshotZone: 0.3
+--- !u!114 &160702583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160702577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecd28f96f9b2be1688b8883f61188e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLives
+  maxLives: 5
+  OnLivesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &217961029
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +514,8 @@ GameObject:
   - component: {fileID: 725174938}
   - component: {fileID: 725174937}
   - component: {fileID: 725174936}
+  - component: {fileID: 725174940}
+  - component: {fileID: 725174939}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -630,6 +670,42 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &725174939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725174934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412f0428df03c0850b49be1e58802080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  attackKey: 102
+  cooldownDuration: 0.4
+  attackRange: 1.5
+  attackPoint: {fileID: 0}
+  headshotZone: 0.3
+--- !u!114 &725174940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725174934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecd28f96f9b2be1688b8883f61188e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLives
+  maxLives: 5
+  OnLivesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &833040583
 GameObject:
   m_ObjectHideFlags: 0

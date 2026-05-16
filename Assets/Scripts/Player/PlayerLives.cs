@@ -6,12 +6,9 @@ public class PlayerLives : MonoBehaviour
     [SerializeField] private int maxLives = 5;
     private int currentLives;
     private bool isDead;
-    private bool isCriticDamage;
-
     public int CurrentLives => currentLives;
     public int MaxLives => maxLives;
     public bool IsDead => isDead;
-    public bool IsCriticDamage => isCriticDamage;
 
     public UnityEvent<int> OnLivesChanged;
     public UnityEvent OnPlayerDied;
@@ -25,6 +22,13 @@ public class PlayerLives : MonoBehaviour
     {
         if (isDead) return;
         currentLives = Mathf.Max(0, currentLives - (isCritical ? 3 : 1));
+        OnLivesChanged?.Invoke(currentLives);
+
+        if (currentLives <= 0)
+        {
+            isDead = true;
+            OnPlayerDied?.Invoke();
+        }
     }
 
     public void Heal(int amount)

@@ -43,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (hit.gameObject == gameObject) continue;
 
-            Vector2 dirToTarget = (hit.bounds.center - (Vector2)attackPoint.position).normalized;
+            Vector2 dirToTarget = ((Vector2)hit.bounds.center - (Vector2)attackPoint.position).normalized;
             if (dirToTarget.x * facing < 0f) continue;
 
             PlayerLives opponent = hit.GetComponentInParent<PlayerLives>();
