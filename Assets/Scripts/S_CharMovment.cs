@@ -19,6 +19,8 @@ public class S_CharMovment : MonoBehaviour
     private BoxCollider2D boxCollider;
     private float originalColliderHeight;
     private Vector2 originalColliderOffset;
+    private Vector2 knockbackVelocity;
+    private float knockbackEndTime;
     
 
     private void Awake()
@@ -41,6 +43,14 @@ public class S_CharMovment : MonoBehaviour
 
     private void HandleMovement()
     {
+        if (Time.time < knockbackEndTime)
+        {
+            rb.linearVelocity = new Vector2(knockbackVelocity.x, Mathf.Max(rb.linearVelocity.y, knockbackVelocity.y));
+            UpdateAnimations(0f);
+            HandleBending();
+            return;
+        }
+
         float move = 0f;
         if (CompareTag("Player1")) //WASD
         {
@@ -146,5 +156,11 @@ public class S_CharMovment : MonoBehaviour
         boxCollider.size = new Vector2(boxCollider.size.x, originalColliderHeight);
         boxCollider.offset = originalColliderOffset;
     }
+    }
+
+    public void ApplyKnockback(Vector2 velocity, float duration)
+    {
+        knockbackVelocity = velocity;
+        knockbackEndTime = Time.time + duration;
     }
 }
