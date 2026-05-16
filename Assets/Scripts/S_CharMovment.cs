@@ -54,6 +54,11 @@ public class S_CharMovment : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                isBended = true;
+            }
+            else {isBended = false;}
             
         }
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
