@@ -5,9 +5,28 @@ public class GameManager : MonoBehaviour
     [Header("Match Settings")]
     [SerializeField] private float matchDuration = 90f;
 
+    [Header("Players")]
+    [SerializeField] private PlayerLives player1Lives;
+    [SerializeField] private PlayerLives player2Lives;
+
     private float currentTime;
     private bool matchStarted;
     private bool matchFinished;
+
+    private void Awake()
+    {
+        if (player1Lives == null || player2Lives == null)
+        {
+            PlayerLives[] players = FindObjectsByType<PlayerLives>(FindObjectsSortMode.None);
+            foreach (var p in players)
+            {
+                if (p.gameObject.name == "Player1")
+                    player1Lives = p;
+                else if (p.gameObject.name == "Player2")
+                    player2Lives = p;
+            }
+        }
+    }
 
     private void Start()
     {
@@ -34,22 +53,26 @@ public class GameManager : MonoBehaviour
         matchStarted = true;
         matchFinished = false;
 
+        player1Lives.OnPlayerDied.AddListener(() => EndMatchWithWinner(2));
+        player2Lives.OnPlayerDied.AddListener(() => EndMatchWithWinner(1));
+
         Debug.Log("Partida iniciada");
     }
 
     private void EndMatchAsDraw()
     {
+        if (matchFinished) return;
         matchFinished = true;
         Debug.Log("Empate por tiempo");
     }
 
-    public float GetCurrentTime()
+    private void EndMatchWithWinner(int winnerPlayerNumber)
     {
-        return currentTime;
+        if (matchFinished) return;
+        matchFinished = true;
+        Debug.Log($"Jugador {winnerPlayerNumber} gana");
     }
 
-    public bool IsMatchFinished()
-    {
-        return matchFinished;
-    }
+    public float GetCurrentTime() => currentTime;
+    public bool IsMatchFinished() => matchFinished;
 }
