@@ -299,7 +299,7 @@ El temporizador debe detenerse cuando la partida termina por victoria o empate.
 | Mover izquierda | Flecha izquierda |
 | Mover derecha | Flecha derecha |
 | Saltar | Flecha arriba |
-| Atacar | K |
+| Atacar | Shift Derecho|
 
 Si se decide no implementar salto, se eliminará la acción de saltar del esquema de controles.
 
