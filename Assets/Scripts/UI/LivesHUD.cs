@@ -4,34 +4,46 @@ using UnityEngine.UI;
 public class LivesHUD : MonoBehaviour
 {
     [Header("Player 1 Lives")]
-    [SerializeField] private Image[] player1LifeBoxes;
+    [SerializeField] private Image[] player1LifeImages;
 
     [Header("Player 2 Lives")]
-    [SerializeField] private Image[] player2LifeBoxes;
+    [SerializeField] private Image[] player2LifeImages;
 
-    [Header("Colors")]
-    [SerializeField] private Color activeLifeColor = Color.white;
-    [SerializeField] private Color inactiveLifeColor = new Color(1f, 1f, 1f, 0.2f);
+    [Header("Sprites")]
+    [SerializeField] private Sprite player1FullHeartSprite;
+    [SerializeField] private Sprite player2FullHeartSprite;
+    [SerializeField] private Sprite emptyHeartSprite;
+
+    private const int MaxLives = 5;
+
+    private void Start()
+    {
+        UpdatePlayer1Lives(MaxLives);
+        UpdatePlayer2Lives(MaxLives);
+    }
 
     public void UpdatePlayer1Lives(int currentLives)
     {
-        UpdateLives(player1LifeBoxes, currentLives);
+        UpdateLives(player1LifeImages, currentLives, player1FullHeartSprite);
     }
 
     public void UpdatePlayer2Lives(int currentLives)
     {
-        UpdateLives(player2LifeBoxes, currentLives);
+        UpdateLives(player2LifeImages, currentLives, player2FullHeartSprite);
     }
 
-    private void UpdateLives(Image[] lifeBoxes, int currentLives)
+    private void UpdateLives(Image[] lifeImages, int currentLives, Sprite fullHeartSprite)
     {
-        for (int i = 0; i < lifeBoxes.Length; i++)
+        int clampedLives = Mathf.Clamp(currentLives, 0, MaxLives);
+
+        for (int i = 0; i < lifeImages.Length; i++)
         {
-            if (lifeBoxes[i] == null)
+            if (lifeImages[i] == null)
                 continue;
 
-            bool isActive = i < currentLives;
-            lifeBoxes[i].color = isActive ? activeLifeColor : inactiveLifeColor;
+            bool hasLife = i < clampedLives;
+            lifeImages[i].sprite = hasLife ? fullHeartSprite : emptyHeartSprite;
+            lifeImages[i].preserveAspect = true;
         }
     }
 }
