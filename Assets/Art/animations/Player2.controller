@@ -347,8 +347,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Win
+  - m_ConditionMode: 6
+    m_ConditionEvent: win
     m_EventTreshold: 4
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8831397128120321681}
@@ -438,7 +438,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Win
+  - m_Name: win
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -551,8 +551,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Win
+  - m_ConditionMode: 6
+    m_ConditionEvent: win
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4897634277237910153}
@@ -675,8 +675,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Win
+  - m_ConditionMode: 6
+    m_ConditionEvent: win
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7704586416493988029}

@@ -38,6 +38,13 @@ public class S_CharMovment : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.IsMatchFinished)
+        {
+            rb.linearVelocity = Vector2.zero;
+            UpdateAnimations(0f);
+            return;
+        }
+
         HandleMovement();
     }
 

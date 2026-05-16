@@ -45,6 +45,14 @@ public class S_PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.IsMatchFinished)
+        {
+            if (isAttacking)
+                CancelAttack();
+
+            return;
+        }
+
         if (isAttacking && playerHealth != null && playerHealth.IsDamageLocked)
         {
             CancelAttackBecauseDamageWasReceived();
@@ -153,6 +161,12 @@ public class S_PlayerAttack : MonoBehaviour
 
     private void CancelAttackBecauseDamageWasReceived()
     {
+        CancelAttack();
+        Debug.Log($"{gameObject.name} cancela su ataque porque acaba de recibir dano");
+    }
+
+    private void CancelAttack()
+    {
         if (attackCoroutine != null)
         {
             StopCoroutine(attackCoroutine);
@@ -164,7 +178,6 @@ public class S_PlayerAttack : MonoBehaviour
 
         isAttacking = false;
         damagedTargets.Clear();
-        Debug.Log($"{gameObject.name} cancela su ataque porque acaba de recibir dano");
     }
 
     private void ApplyKnockback(PlayerHealth targetHealth)
