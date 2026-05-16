@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 7682f3759d00d8349846b65010a28a18
+guid: 4124819cc2e461f45bca907d34b6434d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -112644698153631443
-    second: Red-Walk_0
+      213: 404146459108318355
+    second: Blue-Walk_0
   - first:
-      213: 8220038271701020828
-    second: Red-Walk_1
+      213: -6415014261095309053
+    second: Blue-Walk_1
   - first:
-      213: -3716135187014397774
-    second: Red-Walk_2
+      213: 8569288469514321362
+    second: Blue-Walk_2
   - first:
-      213: -9218238620358074868
-    second: Red-Walk_3
+      213: 9179961557683709741
+    second: Blue-Walk_3
   - first:
-      213: -4258418083271788921
-    second: Red-Walk_4
+      213: -9130367925268346664
+    second: Blue-Walk_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,10 +125,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red-Walk_0
+      name: Blue-Walk_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 20
         y: 0
         width: 35
         height: 69
@@ -140,17 +140,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d21c8bc6e3ecf6ef0800000000000000
-      internalID: -112644698153631443
+      spriteID: 39c12643011db9500800000000000000
+      internalID: 404146459108318355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Walk_1
+      name: Blue-Walk_1
       rect:
         serializedVersion: 2
-        x: 73
+        x: 84
         y: 0
         width: 35
         height: 69
@@ -162,17 +162,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c90fad8a141731270800000000000000
-      internalID: 8220038271701020828
+      spriteID: 301695a848a49f6a0800000000000000
+      internalID: -6415014261095309053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Walk_2
+      name: Blue-Walk_2
       rect:
         serializedVersion: 2
-        x: 137
+        x: 148
         y: 0
         width: 35
         height: 69
@@ -184,17 +184,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b05da08cb2ad6cc0800000000000000
-      internalID: -3716135187014397774
+      spriteID: 2dd7043067a3ce670800000000000000
+      internalID: 8569288469514321362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Walk_3
+      name: Blue-Walk_3
       rect:
         serializedVersion: 2
-        x: 201
+        x: 212
         y: 0
         width: 35
         height: 69
@@ -206,17 +206,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0e15caa0dc321080800000000000000
-      internalID: -9218238620358074868
+      spriteID: d27aa713666c56f70800000000000000
+      internalID: 9179961557683709741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Walk_4
+      name: Blue-Walk_4
       rect:
         serializedVersion: 2
-        x: 262
+        x: 276
         y: 0
         width: 38
         height: 69
@@ -228,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7863c79b05f07e4c0800000000000000
-      internalID: -4258418083271788921
+      spriteID: 8d882c92fba6a4180800000000000000
+      internalID: -9130367925268346664
       vertices: []
       indices: 
       edges: []
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4e8f09190676f41409520039d8333b31
+    spriteID: 801b35f963bb5ac4eb801bccd6040cda
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red-Walk_0: -112644698153631443
-      Red-Walk_1: 8220038271701020828
-      Red-Walk_2: -3716135187014397774
-      Red-Walk_3: -9218238620358074868
-      Red-Walk_4: -4258418083271788921
+      Blue-Walk_0: 404146459108318355
+      Blue-Walk_1: -6415014261095309053
+      Blue-Walk_2: 8569288469514321362
+      Blue-Walk_3: 9179961557683709741
+      Blue-Walk_4: -9130367925268346664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

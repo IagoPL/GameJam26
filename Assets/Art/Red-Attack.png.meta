@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 7682f3759d00d8349846b65010a28a18
+guid: ae1133c0a0e60ea46825f4c374bfc773
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -112644698153631443
-    second: Red-Walk_0
+      213: 6483892779588941914
+    second: Red-Attack_0
   - first:
-      213: 8220038271701020828
-    second: Red-Walk_1
+      213: -8675169353378624035
+    second: Red-Attack_1
   - first:
-      213: -3716135187014397774
-    second: Red-Walk_2
-  - first:
-      213: -9218238620358074868
-    second: Red-Walk_3
-  - first:
-      213: -4258418083271788921
-    second: Red-Walk_4
+      213: 1835352036069196361
+    second: Red-Attack_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red-Walk_0
+      name: Red-Attack_0
       rect:
         serializedVersion: 2
         x: 9
@@ -133,103 +127,59 @@ TextureImporter:
         width: 35
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d21c8bc6e3ecf6ef0800000000000000
-      internalID: -112644698153631443
+      spriteID: a587e11412a6bf950800000000000000
+      internalID: 6483892779588941914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Walk_1
+      name: Red-Attack_1
       rect:
         serializedVersion: 2
         x: 73
         y: 0
-        width: 35
+        width: 37
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c90fad8a141731270800000000000000
-      internalID: 8220038271701020828
+      spriteID: ddd0385af6b9b9780800000000000000
+      internalID: -8675169353378624035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-Walk_2
+      name: Red-Attack_2
       rect:
         serializedVersion: 2
-        x: 137
+        x: 140
         y: 0
-        width: 35
+        width: 52
         height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b05da08cb2ad6cc0800000000000000
-      internalID: -3716135187014397774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red-Walk_3
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 0
-        width: 35
-        height: 69
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c0e15caa0dc321080800000000000000
-      internalID: -9218238620358074868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red-Walk_4
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 0
-        width: 38
-        height: 69
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7863c79b05f07e4c0800000000000000
-      internalID: -4258418083271788921
+      spriteID: 942c1b3e3fa787910800000000000000
+      internalID: 1835352036069196361
       vertices: []
       indices: 
       edges: []
@@ -238,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4e8f09190676f41409520039d8333b31
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red-Walk_0: -112644698153631443
-      Red-Walk_1: 8220038271701020828
-      Red-Walk_2: -3716135187014397774
-      Red-Walk_3: -9218238620358074868
-      Red-Walk_4: -4258418083271788921
+      Red-Attack_0: 6483892779588941914
+      Red-Attack_1: -8675169353378624035
+      Red-Attack_2: 1835352036069196361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
