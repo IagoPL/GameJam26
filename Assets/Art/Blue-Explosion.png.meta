@@ -143,7 +143,7 @@ TextureImporter:
         x: 20
         y: 0
         width: 35
-        height: 69
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,35 +203,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue-Explosion_3
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 38
-        width: 5
-        height: 2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5b2e11307a3f70a0800000000000000
-      internalID: -6881717452064019617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Blue-Explosion_6
       rect:
         serializedVersion: 2
         x: 206
         y: 0
         width: 39
-        height: 42
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,7 +231,7 @@ TextureImporter:
         x: 256
         y: 0
         width: 63
-        height: 14
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,7 +253,7 @@ TextureImporter:
         x: 320
         y: 0
         width: 63
-        height: 14
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
