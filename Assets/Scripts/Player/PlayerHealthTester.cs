@@ -1,3 +1,4 @@
+//TODO Boprrar despues es un tester, esta referenciado en el objeto playerHealthtester en manager
 using UnityEngine;
 
 public class PlayerHealthTester : MonoBehaviour
@@ -17,17 +18,17 @@ public class PlayerHealthTester : MonoBehaviour
             player2Health.TakeDamage(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             player1Health.TakeDamage(2);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             player2Health.TakeDamage(2);
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             player1Health.ResetLives();
             player2Health.ResetLives();

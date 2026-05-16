@@ -8,7 +8,8 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField] private int currentLives;
-
+    [SerializeField] private PlayerHealth player1Health;
+    [SerializeField] private PlayerHealth player2Health;
     public event Action<int> OnLivesChanged;
     public event Action OnPlayerDied;
 
@@ -28,9 +29,19 @@ public class PlayerHealth : MonoBehaviour
     {
         NotifyLivesChanged();
     }
+public void Kill()
+{
+    if (hasDied)
+        return;
+
+    currentLives = 0;
+    NotifyLivesChanged();
+    Die();
+}
 
     public void TakeDamage(int damage)
     {
+        Debug.Log($"{gameObject.name} recibe {damage} de daño");
         if (hasDied)
             return;
 
