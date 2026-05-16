@@ -45,4 +45,3 @@ public class PlayerLives : MonoBehaviour
         OnLivesChanged?.Invoke(currentLives);
     }
 }
-
