@@ -8,6 +8,7 @@ public class S_CharMovment : MonoBehaviour
     public float jumpForce = 7f;
 
     private bool isGrounded = false;
+    private bool isBended = false;
 
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -30,6 +31,7 @@ public class S_CharMovment : MonoBehaviour
         float move = 0f;
         if (CompareTag("Player1")) //WASD
         {
+            
             if (Input.GetKey(KeyCode.A)) move = -1f;
             else if (Input.GetKey(KeyCode.D)) move = 1f;
 
@@ -37,6 +39,11 @@ public class S_CharMovment : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             }
+            if (Input.GetKey(KeyCode.S))
+            {
+                isBended = true;
+            }
+            else {isBended = false;}
         }
         if (CompareTag("Player2")) //Arrows
         {
@@ -47,6 +54,7 @@ public class S_CharMovment : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             }
+            
         }
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
@@ -67,6 +75,10 @@ public class S_CharMovment : MonoBehaviour
 
         if (anim.GetBool("ifAttacking"))
             anim.SetBool("ifAttacking", false);
+        if (isBended == true)
+            anim.SetBool("ifBending", true);
+        else if (isBended == false)   
+            anim.SetBool("ifBending", false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
