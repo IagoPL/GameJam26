@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 16d5ee58c45cfcd4298e7db3225de666
+guid: cdc36064f6818ba418de1133c70a1344
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4654384847452413791
-    second: Red-AttackJump_0
+      213: 4111805756627538290
+    second: Red-BendAttack_0
   - first:
-      213: -4298590834215030337
-    second: Red-AttackJump_1
+      213: 40582766661868358
+    second: Red-BendAttack_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,12 +116,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red-AttackJump_0
+      name: Red-BendAttack_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 11
-        width: 61
+        x: 9
+        y: 0
+        width: 37
         height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -131,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5f9c58db52b79040800000000000000
-      internalID: 4654384847452413791
+      spriteID: 271d035ec81101930800000000000000
+      internalID: 4111805756627538290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red-AttackJump_1
+      name: Red-BendAttack_1
       rect:
         serializedVersion: 2
-        x: 65
-        y: 11
-        width: 61
+        x: 76
+        y: 0
+        width: 50
         height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb1fcd349665854c0800000000000000
-      internalID: -4298590834215030337
+      spriteID: 64b12eeafcd209000800000000000000
+      internalID: 40582766661868358
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e74ae571ccda7454a9e493d5a820d36b
+    spriteID: 43fe068bb3c87054d8d49efd97ec6f7e
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red-AttackJump_0: 4654384847452413791
-      Red-AttackJump_1: -4298590834215030337
+      Red-BendAttack_0: 4111805756627538290
+      Red-BendAttack_1: 40582766661868358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

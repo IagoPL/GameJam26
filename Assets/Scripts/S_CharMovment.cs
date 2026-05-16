@@ -62,6 +62,10 @@ public class S_CharMovment : MonoBehaviour
             {
                 FlipSprite();
             }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                anim.SetTrigger("Attack"); 
+            }
         }
         if (CompareTag("Player2")) //Arrows
         {
@@ -81,7 +85,10 @@ public class S_CharMovment : MonoBehaviour
             {
                FlipSprite();
             }
-            
+            if (Input.GetKeyDown(KeyCode.RightShift))
+            {
+                anim.SetTrigger("Attack");
+            }
         }
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
@@ -101,8 +108,6 @@ public class S_CharMovment : MonoBehaviour
         else
             anim.SetBool("ifJumping", false);
 
-        if (anim.GetBool("ifAttacking"))
-            anim.SetBool("ifAttacking", false);
         if (isBended == true)
             anim.SetBool("ifBending", true);
         else if (isBended == false)   

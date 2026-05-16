@@ -116,9 +116,9 @@ TextureImporter:
       name: Background_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 432
         y: 0
-        width: 394
+        width: 432
         height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -135,34 +135,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Background_1
-      rect:
-        serializedVersion: 2
-        x: 382
-        y: 1
-        width: 395
-        height: 223
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2c8d0f8ba0b9c0419029c67a527506c
-      internalID: 892910450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Background_2
       rect:
         serializedVersion: 2
-        x: 757
+        x: 0
         y: 0
-        width: 394
+        width: 432
         height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -172,8 +150,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be7183d638cd1944ebfffb980d926608
-      internalID: 1114629258
+      spriteID: 2c938b49e216cdb4b8a1e77a2b64805d
+      internalID: 1696211985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_3
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 432
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4390285d0ac0ea94b9ade0a319c7784c
+      internalID: 22905074
       vertices: []
       indices: 
       edges: []
@@ -182,7 +182,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1fe18976dea1be9478e6b168254d5270
+    spriteID: 347e12e423fb72647be5c2a684164929
     internalID: 0
     vertices: []
     indices: 
@@ -193,9 +193,10 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Background_0: -1955448553306655712
-      Background_1: 892910450
-      Background_2: 1114629258
-      Background_3: -718387527
+      Background_1: 1130102798
+      Background_2: 1696211985
+      Background_3: 22905074
+      Background_4: 59983741
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
