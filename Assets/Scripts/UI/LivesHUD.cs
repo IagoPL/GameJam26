@@ -16,12 +16,6 @@ public class LivesHUD : MonoBehaviour
 
     private const int MaxLives = 5;
 
-    private void Start()
-    {
-        UpdatePlayer1Lives(MaxLives);
-        UpdatePlayer2Lives(MaxLives);
-    }
-
     public void UpdatePlayer1Lives(int currentLives)
     {
         UpdateLives(player1LifeImages, currentLives, player1FullHeartSprite);
@@ -42,6 +36,7 @@ public class LivesHUD : MonoBehaviour
                 continue;
 
             bool hasLife = i < clampedLives;
+
             lifeImages[i].sprite = hasLife ? fullHeartSprite : emptyHeartSprite;
             lifeImages[i].preserveAspect = true;
         }

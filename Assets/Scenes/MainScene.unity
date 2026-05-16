@@ -119,11 +119,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &143264595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6190482182110549539, guid: bbf9af952b4415c4b804a92b8b282fce, type: 3}
+  m_PrefabInstance: {fileID: 1448283956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &143264596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1110263729537168815, guid: bbf9af952b4415c4b804a92b8b282fce, type: 3}
   m_PrefabInstance: {fileID: 1448283956}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &143264602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143264595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4add48cf4b09f3a46bb04adc351522c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxLives: 5
+  currentLives: 0
 --- !u!1 &217961029
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,13 +517,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6842081088430591756, guid: 82f1693660a3ab944b361ee3f7b3a4b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 409176977}
   m_SourcePrefab: {fileID: 100100000, guid: 82f1693660a3ab944b361ee3f7b3a4b9, type: 3}
+--- !u!1 &409176970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6842081088430591756, guid: 82f1693660a3ab944b361ee3f7b3a4b9, type: 3}
+  m_PrefabInstance: {fileID: 330935630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &409176971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7527423621041038171, guid: 82f1693660a3ab944b361ee3f7b3a4b9, type: 3}
   m_PrefabInstance: {fileID: 330935630}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &409176977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409176970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4add48cf4b09f3a46bb04adc351522c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxLives: 5
+  currentLives: 0
 --- !u!1 &445873578
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +621,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &462979848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462979849}
+  - component: {fileID: 462979850}
+  m_Layer: 0
+  m_Name: HealthTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &462979849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462979848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1941840969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462979850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462979848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fd20b7d57174a48a6fb2143fbdd8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthTester
+  player1Health: {fileID: 143264602}
+  player2Health: {fileID: 409176977}
 --- !u!1 &482699982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1627,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6190482182110549539, guid: bbf9af952b4415c4b804a92b8b282fce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 143264602}
   m_SourcePrefab: {fileID: 100100000, guid: bbf9af952b4415c4b804a92b8b282fce, type: 3}
 --- !u!1 &1473748843
 GameObject:
@@ -1912,6 +2002,7 @@ GameObject:
   - component: {fileID: 1647121821}
   - component: {fileID: 1647121823}
   - component: {fileID: 1647121822}
+  - component: {fileID: 1647121824}
   m_Layer: 0
   m_Name: LivesHUD
   m_TagString: Untagged
@@ -1978,6 +2069,21 @@ MonoBehaviour:
   player1FullHeartSprite: {fileID: 21300000, guid: 47e4eea178d78dd46a804ffd7fc292ca, type: 3}
   player2FullHeartSprite: {fileID: 21300000, guid: a854e1dd7f486d042aa461cd9f6700c6, type: 3}
   emptyHeartSprite: {fileID: 21300000, guid: bfc5c15aba61e63419c5576765ae517d, type: 3}
+--- !u!114 &1647121824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647121820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6cd41a09a67644b9efaaf1ea5a8dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthHUDConnector
+  player1Health: {fileID: 143264602}
+  player2Health: {fileID: 409176977}
+  livesHUD: {fileID: 0}
 --- !u!1 &1649661847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2356,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1513592615}
+  - {fileID: 462979849}
   m_Father: {fileID: 1969941682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1969941681
