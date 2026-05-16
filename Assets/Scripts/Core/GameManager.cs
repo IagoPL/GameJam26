@@ -19,8 +19,15 @@ public class GameManager : MonoBehaviour
     public float CurrentTime => currentTime;
     public bool IsMatchFinished => matchFinished;
 
+    private void Awake()
+    {
+        ResolvePlayerReferences();
+    }
+
     private void OnEnable()
     {
+        ResolvePlayerReferences();
+
         if (player1Health != null)
             player1Health.OnPlayerDied += HandlePlayer1Died;
 
@@ -47,12 +54,17 @@ public class GameManager : MonoBehaviour
         if (!matchStarted || matchFinished)
             return;
 
+        EndMatchIfAnyPlayerIsDead();
+
+        if (matchFinished)
+            return;
+
         currentTime -= Time.deltaTime;
 
         if (currentTime <= 0f)
         {
             currentTime = 0f;
-           /* EndMatchAsDraw() */    KillRandomPlayerByTimeout();
+            KillRandomPlayerByTimeout();
         }
     }
 
@@ -66,6 +78,7 @@ public class GameManager : MonoBehaviour
             matchResultHUD.HideResult();
 
         Debug.Log("Partida iniciada");
+        EndMatchIfAnyPlayerIsDead();
     }
 
     private void HandlePlayer1Died()
@@ -91,19 +104,6 @@ public class GameManager : MonoBehaviour
             matchResultHUD.ShowWinner(winnerPlayerNumber);
     }
 
-    private void EndMatchAsDraw() //TODO cambiar para que esplote uno al perder
-    {
-        if (matchFinished)
-            return;
-
-        matchFinished = true;
-
-        Debug.Log("Empate por tiempo 'PD Mensaje temporal'");
-
-        if (matchResultHUD != null)
-            matchResultHUD.ShowDraw();
-    }
-
     public float GetCurrentTime()
     {
         return currentTime;
@@ -115,25 +115,59 @@ public class GameManager : MonoBehaviour
     }
 
     private void KillRandomPlayerByTimeout()
-{
-    if (matchFinished)
-        return;
-
-    int randomPlayer = Random.Range(1, 3); // 1 o 2
-
-    if (randomPlayer == 1)
     {
-        Debug.Log("Tiempo agotado: muere aleatoriamente el Jugador 1");
-        player1Health.TakeDamage(999);
-         EndMatchWithWinner(1);
+        if (matchFinished)
+            return;
+
+        if (player1Health == null || player2Health == null)
+        {
+            Debug.LogWarning("No se puede resolver el final por tiempo: falta PlayerHealth de algun jugador");
+            return;
+        }
+
+        int randomPlayer = Random.Range(1, 3);
+
+        if (randomPlayer == 1)
+        {
+            Debug.Log("Tiempo agotado: el Jugador 1 pierde todas sus vidas");
+            player1Health.Kill();
+        }
+        else
+        {
+            Debug.Log("Tiempo agotado: el Jugador 2 pierde todas sus vidas");
+            player2Health.Kill();
+        }
     }
-    else
+
+    private void EndMatchIfAnyPlayerIsDead()
     {
-        Debug.Log("Tiempo agotado: muere aleatoriamente el Jugador 2");
-        player2Health.TakeDamage(999);
-        EndMatchWithWinner(2);
+        if (matchFinished)
+            return;
+
+        if (player1Health != null && player1Health.IsDead)
+        {
+            EndMatchWithWinner(2);
+            return;
+        }
+
+        if (player2Health != null && player2Health.IsDead)
+        {
+            EndMatchWithWinner(1);
+        }
     }
-}
 
+    private void ResolvePlayerReferences()
+    {
+        if (player1Health == null)
+            player1Health = FindPlayerHealthByTag("Player1");
 
+        if (player2Health == null)
+            player2Health = FindPlayerHealthByTag("Player2");
+    }
+
+    private PlayerHealth FindPlayerHealthByTag(string playerTag)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag(playerTag);
+        return player != null ? player.GetComponent<PlayerHealth>() : null;
+    }
 }
