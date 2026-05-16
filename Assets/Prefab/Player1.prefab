@@ -78,7 +78,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.21460357, y: 0.17223781}
   m_EdgeRadius: 0
---- !u!1 &4710890409312579517
+--- !u!1 &5757867999866706845
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,37 +86,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8964944959374155923}
-  - component: {fileID: 7459796157881106263}
+  - component: {fileID: 3111856411746473373}
+  - component: {fileID: 4737656679554533951}
   m_Layer: 0
-  m_Name: attackCollider
+  m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8964944959374155923
+--- !u!4 &3111856411746473373
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4710890409312579517}
+  m_GameObject: {fileID: 5757867999866706845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1110263729537168815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7459796157881106263
+--- !u!61 &4737656679554533951
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4710890409312579517}
+  m_GameObject: {fileID: 5757867999866706845}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -144,17 +144,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0019619465, y: -0.02550358}
+  m_Offset: {x: 0.23966292, y: -0.10516521}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.289823, y: 0.08579468}
+  m_Size: {x: 0.61537975, y: 0.20751762}
   m_EdgeRadius: 0
 --- !u!1 &6190482182110549539
 GameObject:
@@ -191,7 +191,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5892118594809216174}
-  - {fileID: 8964944959374155923}
+  - {fileID: 3111856411746473373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6589086354637062882
