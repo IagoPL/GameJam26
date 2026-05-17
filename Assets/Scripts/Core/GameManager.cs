@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("Match Settings")]
-    [SerializeField] private float matchDuration = 60f;
+    [SerializeField] private float matchDuration = 30f;
 
     [Header("Players")]
     [SerializeField] private PlayerHealth player1Health;
@@ -27,11 +27,13 @@ public class GameManager : MonoBehaviour
 
     public float CurrentTime => currentTime;
     public bool IsMatchFinished => matchFinished;
+    public bool IsMatchStarted => matchStarted;
 
     private void Awake()
     {
         Instance = this;
         ResolvePlayerReferences();
+        currentTime = matchDuration;
     }
 
     private void OnEnable()
@@ -62,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartMatch();
+        PrepareMatch();
     }
 
     private void Update()
@@ -92,7 +94,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void StartMatch()
+    private void PrepareMatch()
+    {
+        ResolvePlayerReferences();
+
+        currentTime = matchDuration;
+        matchStarted = false;
+        matchFinished = false;
+        SetWinAnimations(0);
+        StopPlayerMovement();
+
+        if (matchResultHUD != null)
+            matchResultHUD.HideResult();
+    }
+
+    public void StartMatch()
     {
         ResolvePlayerReferences();
 

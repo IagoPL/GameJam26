@@ -45,7 +45,7 @@ public class S_PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.IsMatchFinished)
+        if (GameManager.Instance != null && (!GameManager.Instance.IsMatchStarted || GameManager.Instance.IsMatchFinished))
         {
             if (isAttacking)
                 CancelAttack();
