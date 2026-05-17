@@ -19,6 +19,10 @@ public class S_PlayerAttack : MonoBehaviour
     [SerializeField] private float knockbackUpForce = 1f;
     [SerializeField] private float knockbackDuration = 0.2f;
 
+    [Header("Hit Effect")]
+    [SerializeField] private GameObject hitEffectPrefab;
+    [SerializeField] private float hitEffectDuration = 0.5f;
+
     private bool isAttacking = false;
     private string playerTag;
     private PlayerHealth playerHealth;
@@ -49,7 +53,6 @@ public class S_PlayerAttack : MonoBehaviour
         {
             if (isAttacking)
                 CancelAttack();
-
             return;
         }
 
@@ -92,52 +95,36 @@ public class S_PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"{gameObject.name} OnTriggerEnter2D con {collision.gameObject.name}. Atacando: {isAttacking}");
         TryDamageTarget(collision);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log($"{gameObject.name} OnTriggerStay2D con {collision.gameObject.name}. Atacando: {isAttacking}");
         TryDamageTarget(collision);
     }
 
     private void TryDamageTarget(Collider2D collision)
     {
-        if (!isAttacking)
-        {
-            Debug.Log($"{gameObject.name} detecta {collision.gameObject.name}, pero no esta atacando");
-            return;
-        }
+        if (!isAttacking) return;
 
         PlayerHealth targetHealth = collision.GetComponentInParent<PlayerHealth>();
-        if (targetHealth == null)
-        {
-            Debug.Log($"{gameObject.name} detecta {collision.gameObject.name}, pero no encontro PlayerHealth en el objeto ni en sus padres");
-            return;
-        }
-
-        if (targetHealth.gameObject == gameObject)
-        {
-            Debug.Log($"{gameObject.name} ignora su propio collider: {collision.gameObject.name}");
-            return;
-        }
-
-        if (!damagedTargets.Add(targetHealth))
-        {
-            Debug.Log($"{gameObject.name} ya habia golpeado a {targetHealth.gameObject.name} en este ataque");
-            return;
-        }
+        if (targetHealth == null) return;
+        if (targetHealth.gameObject == gameObject) return;
+        if (!damagedTargets.Add(targetHealth)) return;
 
         bool isCritical = Random.value < criticalChance;
         int damage = isCritical ? criticalDamage : normalDamage;
 
-        Debug.Log($"{gameObject.name} intenta aplicar {damage} de dano a {targetHealth.gameObject.name} por collider {collision.gameObject.name}. Critico: {isCritical}");
+        Debug.Log($"{gameObject.name} intenta aplicar {damage} de daño a {targetHealth.gameObject.name}. Critico: {isCritical}");
 
         if (targetHealth.TakeDamage(damage))
         {
             ApplyKnockback(targetHealth);
-            Debug.Log($"{gameObject.name} golpe aplicado a {targetHealth.gameObject.name}. Dano final: {damage}");
+
+            Vector2 hitPosition = collision.ClosestPoint(transform.position);
+            SpawnHitEffect(hitPosition, isCritical, targetHealth.transform);
+
+            Debug.Log($"{gameObject.name} golpe aplicado a {targetHealth.gameObject.name}. Daño final: {damage}");
         }
         else
         {
@@ -152,7 +139,7 @@ public class S_PlayerAttack : MonoBehaviour
 
         if (playerHealth != null && playerHealth.IsDamageLocked)
         {
-            Debug.Log($"{gameObject.name} no puede atacar porque acaba de recibir dano");
+            Debug.Log($"{gameObject.name} no puede atacar porque acaba de recibir daño");
             return false;
         }
 
@@ -162,7 +149,7 @@ public class S_PlayerAttack : MonoBehaviour
     private void CancelAttackBecauseDamageWasReceived()
     {
         CancelAttack();
-        Debug.Log($"{gameObject.name} cancela su ataque porque acaba de recibir dano");
+        Debug.Log($"{gameObject.name} cancela su ataque porque acaba de recibir daño");
     }
 
     private void CancelAttack()
@@ -215,5 +202,20 @@ public class S_PlayerAttack : MonoBehaviour
 
             Debug.Log($"{gameObject.name} retrocede por impacto: {attackerVelocity}");
         }
+    }
+
+    private void SpawnHitEffect(Vector2 position, bool isCritical, Transform parent)
+    {
+        if (hitEffectPrefab == null) return;
+
+        Vector3 spawnPos = new Vector3(position.x, position.y, -0.1f);
+        GameObject effect = Instantiate(hitEffectPrefab, spawnPos, Quaternion.identity, parent);
+
+        S_HitEffect effectScript = effect.GetComponent<S_HitEffect>();
+        if (effectScript != null)
+            effectScript.isCritical = isCritical;
+
+        effect.SetActive(true);
+        Destroy(effect, hitEffectDuration);
     }
 }

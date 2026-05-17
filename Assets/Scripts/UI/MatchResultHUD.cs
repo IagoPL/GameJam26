@@ -4,7 +4,9 @@ public class MatchResultHUD : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private GameObject resultPanel;
-    [SerializeField] private TMP_Text resultText;
+    [SerializeField] private GameObject Player1Win;
+    [SerializeField] private GameObject Player2Win;
+
 
     public void ShowWinner(int winnerPlayerNumber)
     {
@@ -12,17 +14,26 @@ public class MatchResultHUD : MonoBehaviour
         if (resultPanel != null)
             resultPanel.SetActive(true);
 
-        if (resultText != null)
-            resultText.text = $"Gana Jugador {winnerPlayerNumber}";
+        if (Player1Win != null && Player2Win != null)
+        {
+            if (winnerPlayerNumber == 1)
+            {
+                Player1Win.SetActive (true);
+                Player2Win.SetActive (false);
+            }
+            else
+            {
+                Player1Win.SetActive (false);
+                Player2Win.SetActive (true);
+            }
+        }
+            
     }
 
     public void ShowDraw()
     {
         if (resultPanel != null)
             resultPanel.SetActive(true);
-
-        if (resultText != null)
-            resultText.text = "Empate";
     }
 
     public void HideResult()
