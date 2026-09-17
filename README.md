@@ -65,20 +65,20 @@ You can download and play the game directly on itch.io:
 
 Each of us contributed to different aspects of the game:
 
-*   **[Meritxell Algueró](https://github.com/YOUR_GITHUB_USERNAME)** (Programmer):
+*   **[Meritxell Algueró](https://github.com/MeriAlguero)** (Programmer):
     *   Gameplay (Character aggro: movement, attack, damage, etc.)
     *   Animation System (Animation behavior)
     *   Menu
     *   Build
-*   **[Iago Prieto](https://github.com/YOUR_GITHUB_USERNAME)** (Programmer):
+*   **[Iago Prieto](https://github.com/IagoPL)** (Programmer):
     *   Documentation
     *   Health System
     *   UI behavior
     *   Win/Lose conditions
-*   **[David Garcia](https://github.com/YOUR_GITHUB_USERNAME)** (Artist):
+*   **[David Garcia](https://github.com/Blu3Hunter)** (Artist):
     *   Backgrounds
     *   Character animations
     *   UI Art
-*   **[Axel Arroyo](https://github.com/YOUR_GITHUB_USERNAME)** (Programmer):
+*   **[Axel Arroyo](https://github.com/eldeivid12)** (Programmer):
     *   Itch.io preparation
     *   Initial health system implementation
